@@ -1,1 +1,1 @@
-export { Grid } from './components/Grid';
+export { WyreGrid } from "./components/WyreGrid";
