@@ -1,3 +1,8 @@
+import { Color } from "../enums/enums";
+
+/**
+ * A component for separating elements when viewed.
+ */
 const Divider: React.FC = () => {
     return (
         <div
@@ -7,7 +12,7 @@ const Divider: React.FC = () => {
                 right: 0,
                 bottom: "6px",
                 width: "1px",
-                backgroundColor: "#ccc",
+                backgroundColor: Color.Border,
             }}
         />
     );
