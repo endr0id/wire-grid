@@ -1,88 +1,72 @@
 import React from "react";
 import { Color, Size } from "../enums/enums";
+import Divider from "./divider/Divider";
 
 type GridProps = {
     data: { [key: string]: string | number }[];
 };
 
 const borderProperty = `1px solid ${Color.Border}`;
-const borderNone = "none";
-const firstColumn = 0;
 
 export const WyreGrid: React.FC<GridProps> = ({ data }) => {
     if (data.length === 0) return <p>No data available</p>;
 
     const headers = Object.keys(data[0]);
-    const lastColumn = headers.length - 1;
 
     return (
         <div
             style={{
-                width: `${Size.FullWidth}`,
-                height: `${Size.FullHeight}`,
+                display: "grid",
+                gridTemplateColumns: `repeat(${headers.length}, 1fr)`,
                 border: borderProperty,
                 borderRadius: "5px",
+                overflow: "hidden",
             }}
         >
-            <div>Grid header</div>
-            <table
-                style={{
-                    width: `${Size.FullWidth}`,
-                    height: `${Size.FullHeight}`,
-                    borderCollapse: "collapse",
-                    borderColor: `${Color.Border}`,
-                }}
-            >
-                <thead>
-                    <tr>
-                        {headers.map((header, colIndex) => (
-                            <th
-                                key={header}
-                                style={{
-                                    borderLeft:
-                                        colIndex === firstColumn
-                                            ? borderNone
-                                            : borderProperty,
-                                    borderTop: borderProperty,
-                                    borderRight:
-                                        colIndex === lastColumn
-                                            ? borderNone
-                                            : borderProperty,
-                                    borderBottom: borderProperty,
-                                }}
-                            >
-                                {header}
-                            </th>
-                        ))}
-                    </tr>
-                </thead>
-                <tbody>
-                    {data.map((row, rowIndex) => (
-                        <tr key={rowIndex}>
-                            {headers.map((header, colIndex) => (
-                                <td
-                                    key={header}
-                                    style={{
-                                        borderLeft:
-                                            colIndex === firstColumn
-                                                ? borderNone
-                                                : borderProperty,
-                                        borderTop: borderProperty,
-                                        borderRight:
-                                            colIndex === lastColumn
-                                                ? borderNone
-                                                : borderProperty,
-                                        borderBottom: borderProperty,
-                                    }}
-                                >
-                                    {row[header]}
-                                </td>
-                            ))}
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
-            <div>Grid footer</div>
+            {headers.map((header, index) => (
+                <div
+                    key={header}
+                    style={{
+                        position: "relative",
+                        padding: "8px",
+                        backgroundColor: "#f5f5f5",
+                        fontWeight: "bold",
+                        borderBottom: borderProperty,
+                    }}
+                >
+                    {header}
+                    {index !== headers.length - 1 && <Divider />}
+                </div>
+            ))}
+
+            {data.map((property, index) => (
+                <React.Fragment key={index}>
+                    <div
+                        style={{
+                            padding: "8px",
+                            borderBottom: "1px solid #eee",
+                        }}
+                    >
+                        {property.id}
+                    </div>
+                    <div
+                        style={{
+                            padding: "8px",
+                            borderBottom: "1px solid #eee",
+                        }}
+                    >
+                        {property.name}
+                    </div>
+                    <div
+                        style={{
+                            padding: "8px",
+                            borderBottom: "1px solid #eee",
+                        }}
+                    >
+                        {property.age}
+                    </div>
+                </React.Fragment>
+            ))}
         </div>
     );
 };
