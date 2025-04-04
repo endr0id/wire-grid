@@ -1,33 +1,37 @@
 {
-  "name": "we-grid",
-  "version": "0.1.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@chromatic-com/storybook": "^3.2.6",
-    "@storybook/addon-essentials": "^8.6.11",
-    "@storybook/addon-interactions": "^8.6.11",
-    "@storybook/addon-onboarding": "^8.6.11",
-    "@storybook/blocks": "^8.6.11",
-    "@storybook/react": "^8.6.11",
-    "@storybook/react-vite": "^8.6.11",
-    "@storybook/test": "^8.6.11",
-    "@types/react": "^19.1.0",
-    "@types/react-dom": "^19.1.1",
-    "storybook": "^8.6.11",
-    "tsup": "^8.4.0",
-    "typescript": "^5.8.2"
-  },
-  "dependencies": {
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0"
-  }
+    "name": "wire-grid",
+    "version": "1.0.0",
+    "description": "Wire Grid React component",
+    "main": "index.ts",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "storybook": "storybook dev -p 6006",
+        "build-storybook": "storybook build"
+    },
+    "keywords": [
+        "react",
+        "react-component",
+        "grid"
+    ],
+    "author": "wataru endo",
+    "license": "MIT",
+    "devDependencies": {
+        "@chromatic-com/storybook": "^3.2.6",
+        "@storybook/addon-essentials": "^8.6.11",
+        "@storybook/addon-interactions": "^8.6.11",
+        "@storybook/addon-onboarding": "^8.6.11",
+        "@storybook/blocks": "^8.6.11",
+        "@storybook/react": "^8.6.11",
+        "@storybook/react-vite": "^8.6.11",
+        "@storybook/test": "^8.6.11",
+        "@types/react": "^19.1.0",
+        "@types/react-dom": "^19.1.1",
+        "storybook": "^8.6.11",
+        "tsup": "^8.4.0",
+        "typescript": "^5.8.2"
+    },
+    "peerDependencies": {
+        "react": "^19.1.0",
+        "react-dom": "^19.1.0"
+    }
 }

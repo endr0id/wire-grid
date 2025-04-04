@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { WyreGrid } from "../packages/src/components/WyreGrid";
+import { WireGrid } from "../packages/src/components/WireGrid";
 
-const meta: Meta<typeof WyreGrid> = {
+const meta: Meta<typeof WireGrid> = {
     title: "Components/Grid",
-    component: WyreGrid,
+    component: WireGrid,
     tags: ["autodocs"],
     args: {
         data: [
@@ -16,6 +16,6 @@ const meta: Meta<typeof WyreGrid> = {
 
 export default meta;
 
-type Story = StoryObj<typeof WyreGrid>;
+type Story = StoryObj<typeof WireGrid>;
 
 export const Default: Story = {};

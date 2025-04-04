@@ -8,7 +8,7 @@ type GridProps = {
 
 const borderProperty = `1px solid ${Color.border}`;
 
-export const WyreGrid: React.FC<GridProps> = ({ data }) => {
+export const WireGrid: React.FC<GridProps> = ({ data }) => {
     if (data.length === 0) return <p>No data available</p>;
 
     const columnNames = Object.keys(data[0]);

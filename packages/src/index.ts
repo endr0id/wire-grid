@@ -1,1 +1,1 @@
-export { WyreGrid } from "./components/WyreGrid";
+export { WireGrid } from "./components/WireGrid";
