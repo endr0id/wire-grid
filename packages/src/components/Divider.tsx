@@ -1,4 +1,4 @@
-import { Color } from "../enums/enums";
+import { Color } from "../constants/constant";
 
 /**
  * A component for separating elements when viewed.
@@ -12,7 +12,7 @@ const Divider: React.FC = () => {
                 right: 0,
                 bottom: "6px",
                 width: "1px",
-                backgroundColor: Color.Border,
+                backgroundColor: Color.border,
             }}
         />
     );

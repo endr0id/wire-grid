@@ -1,12 +1,12 @@
 import React from "react";
-import { Color, Size } from "../enums/enums";
+import { Color } from "../constants/constant";
 import Divider from "./Divider";
 
 type GridProps = {
     data: { [key: string]: string | number }[];
 };
 
-const borderProperty = `1px solid ${Color.Border}`;
+const borderProperty = `1px solid ${Color.border}`;
 
 export const WyreGrid: React.FC<GridProps> = ({ data }) => {
     if (data.length === 0) return <p>No data available</p>;
