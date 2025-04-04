@@ -35,13 +35,19 @@ export const WyreGrid: React.FC<GridProps> = ({ data }) => {
             >
                 <thead>
                     <tr>
-                        {headers.map((header) => (
+                        {headers.map((header, colIndex) => (
                             <th
                                 key={header}
                                 style={{
-                                    borderLeft: borderNone,
+                                    borderLeft:
+                                        colIndex === firstColumn
+                                            ? borderNone
+                                            : borderProperty,
                                     borderTop: borderProperty,
-                                    borderRight: borderNone,
+                                    borderRight:
+                                        colIndex === lastColumn
+                                            ? borderNone
+                                            : borderProperty,
                                     borderBottom: borderProperty,
                                 }}
                             >
