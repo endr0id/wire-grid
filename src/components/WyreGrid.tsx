@@ -1,4 +1,5 @@
 import React from "react";
+import { Color, Size } from "../enums/enums";
 
 type GridProps = {
     data: { [key: string]: string | number }[];
@@ -10,23 +11,42 @@ export const WyreGrid: React.FC<GridProps> = ({ data }) => {
     const headers = Object.keys(data[0]);
 
     return (
-        <table border={1} style={{ borderCollapse: "collapse", width: "100%" }}>
-            <thead>
-                <tr>
-                    {headers.map((header) => (
-                        <th key={header}>{header}</th>
-                    ))}
-                </tr>
-            </thead>
-            <tbody>
-                {data.map((row, index) => (
+        <div
+            style={{
+                width: `${Size.FullWidth}`,
+                height: `${Size.FullHeight}`,
+                border: `1px solid ${Color.Border}`,
+                borderRadius: "5px",
+            }}
+        >
+            <div>Grid header</div>
+            <table
+                border={1}
+                style={{
+                    width: `${Size.FullWidth}`,
+                    height: `${Size.FullHeight}`,
+                    borderCollapse: "collapse",
+                    borderColor: `${Color.Border}`,
+                }}
+            >
+                <thead>
                     <tr>
                         {headers.map((header) => (
-                            <td key={header}>{row[header]}</td>
+                            <th key={header}>{header}</th>
                         ))}
                     </tr>
-                ))}
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    {data.map((row, index) => (
+                        <tr>
+                            {headers.map((header) => (
+                                <td key={index}>{row[header]}</td>
+                            ))}
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+            <div>Grid footer</div>
+        </div>
     );
 };
