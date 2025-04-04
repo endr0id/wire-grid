@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { WyreGrid } from "../src/components/WyreGrid";
+import { WyreGrid } from "../packages/src/components/WyreGrid";
 
 const meta: Meta<typeof WyreGrid> = {
     title: "Components/Grid",
