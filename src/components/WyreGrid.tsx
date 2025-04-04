@@ -5,23 +5,27 @@ type GridProps = {
     data: { [key: string]: string | number }[];
 };
 
+const borderProperty = `1px solid ${Color.Border}`;
+const borderNone = "none";
+const firstColumn = 0;
+
 export const WyreGrid: React.FC<GridProps> = ({ data }) => {
     if (data.length === 0) return <p>No data available</p>;
 
     const headers = Object.keys(data[0]);
+    const lastColumn = headers.length - 1;
 
     return (
         <div
             style={{
                 width: `${Size.FullWidth}`,
                 height: `${Size.FullHeight}`,
-                border: `1px solid ${Color.Border}`,
+                border: borderProperty,
                 borderRadius: "5px",
             }}
         >
             <div>Grid header</div>
             <table
-                border={1}
                 style={{
                     width: `${Size.FullWidth}`,
                     height: `${Size.FullHeight}`,
@@ -32,15 +36,41 @@ export const WyreGrid: React.FC<GridProps> = ({ data }) => {
                 <thead>
                     <tr>
                         {headers.map((header) => (
-                            <th key={header}>{header}</th>
+                            <th
+                                key={header}
+                                style={{
+                                    borderLeft: borderNone,
+                                    borderTop: borderProperty,
+                                    borderRight: borderNone,
+                                    borderBottom: borderProperty,
+                                }}
+                            >
+                                {header}
+                            </th>
                         ))}
                     </tr>
                 </thead>
                 <tbody>
-                    {data.map((row, index) => (
-                        <tr>
-                            {headers.map((header) => (
-                                <td key={index}>{row[header]}</td>
+                    {data.map((row, rowIndex) => (
+                        <tr key={rowIndex}>
+                            {headers.map((header, colIndex) => (
+                                <td
+                                    key={header}
+                                    style={{
+                                        borderLeft:
+                                            colIndex === firstColumn
+                                                ? borderNone
+                                                : borderProperty,
+                                        borderTop: borderProperty,
+                                        borderRight:
+                                            colIndex === lastColumn
+                                                ? borderNone
+                                                : borderProperty,
+                                        borderBottom: borderProperty,
+                                    }}
+                                >
+                                    {row[header]}
+                                </td>
                             ))}
                         </tr>
                     ))}
