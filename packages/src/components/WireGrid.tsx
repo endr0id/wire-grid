@@ -1,11 +1,11 @@
 import React from "react";
 import { Color } from "../constants/constant";
 import Divider from "./Divider";
-import type { GridRow } from "../types/GridRow";
+import type { WireGridProps } from "../shared/interface";
 
 const borderProperty = `1px solid ${Color.border}`;
 
-export const WireGrid: React.FC<GridRow> = ({ data }) => {
+export const WireGrid: React.FC<WireGridProps> = ({ data }) => {
     if (data.length === 0) return <p>No data available</p>;
 
     const columnNames = Object.keys(data[0]);
