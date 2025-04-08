@@ -1,5 +1,7 @@
 import React from "react";
 import { styles as wireGridStyles } from "./WireGrid.styles";
+import { renderCellValue } from "../../usecases/gridRows";
+
 import type { WireGridProps } from "../../models";
 
 export const WireGrid: React.FC<WireGridProps> = ({ data }) => {
@@ -37,7 +39,7 @@ export const WireGrid: React.FC<WireGridProps> = ({ data }) => {
                                         : wireGridStyles.border,
                             }}
                         >
-                            {row[colName]}
+                            {renderCellValue(row[colName])}
                         </div>
                     ))}
                 </React.Fragment>
