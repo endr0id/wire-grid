@@ -1,3 +1,11 @@
 {
-    "cSpell.words": ["autodocs", "usecases"]
+    "cSpell.words": ["autodocs", "usecases"],
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit"
+    },
+    "eslint.validate": ["javascript", "typescript", "typescriptreact"],
+    "eslint.useFlatConfig": true,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "prettier.requireConfig": true,
 }
