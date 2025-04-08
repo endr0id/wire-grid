@@ -43,7 +43,10 @@ export const WireGrid: React.FC<WireGridProps> = ({ data }) => {
                             key={columnIndex}
                             style={{
                                 padding: "8px",
-                                borderBottom: borderProperty,
+                                borderBottom:
+                                    rowIndex === data.length - 1
+                                        ? "none"
+                                        : borderProperty,
                             }}
                         >
                             {property[name]}
