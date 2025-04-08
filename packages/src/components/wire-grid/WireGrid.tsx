@@ -1,9 +1,9 @@
 import React from "react";
-import { Color } from "../constants/constant";
-import Divider from "./Divider";
-import { renderCellValue } from "../services/Cell";
+import { Color } from "../../shared/constants/constant";
+import Divider from "../Divider";
+import { renderCellValue } from "../../services/cell";
 
-import type { WireGridProps } from "../shared/interface";
+import type { WireGridProps } from "../../shared/structures/base";
 
 const borderProperty = `1px solid ${Color.border}`;
 

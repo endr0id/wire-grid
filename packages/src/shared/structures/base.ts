@@ -1,4 +1,4 @@
-export type WireGridCell = string | number | boolean;
+import { WireGridCell } from "../types/cell";
 
 export interface WireGridProps {
     data: { [key: string]: WireGridCell }[];
