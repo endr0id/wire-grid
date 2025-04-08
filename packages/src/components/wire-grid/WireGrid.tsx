@@ -4,10 +4,10 @@ import { renderCellValue } from "../../usecases/gridRows";
 
 import type { WireGridProps } from "../../models";
 
-export const WireGrid: React.FC<WireGridProps> = ({ data }) => {
-    if (data.length === 0) return <p>No data available</p>;
+export const WireGrid: React.FC<WireGridProps> = ({ rows }) => {
+    if (rows.length === 0) return <p>No data available</p>;
 
-    const columnNames = Object.keys(data[0]);
+    const columnNames = Object.keys(rows[0]);
 
     return (
         <div
@@ -26,7 +26,7 @@ export const WireGrid: React.FC<WireGridProps> = ({ data }) => {
                 </div>
             ))}
 
-            {data.map((row, rowIndex) => (
+            {rows.map((row, rowIndex) => (
                 <React.Fragment key={rowIndex}>
                     {columnNames.map((colName, colIndex) => (
                         <div
@@ -34,7 +34,7 @@ export const WireGrid: React.FC<WireGridProps> = ({ data }) => {
                             style={{
                                 padding: "8px",
                                 borderBottom:
-                                    rowIndex === data.length - 1
+                                    rowIndex === rows.length - 1
                                         ? "none"
                                         : wireGridStyles.border,
                             }}

@@ -14,12 +14,12 @@ type Story = StoryObj<typeof WireGrid>;
 
 export const Default: Story = {
     render: (args) => {
-        const [data, setData] = useState(args.data);
+        const [rows, setRows] = useState(args.rows);
 
-        return <WireGrid data={data} />;
+        return <WireGrid rows={rows} />;
     },
     args: {
-        data: [
+        rows: [
             { name: "Alice", age: 25, isBool: false, update_on: new Date() },
             { name: "John", age: 30, isBool: false, update_on: new Date() },
             { name: "Beckman", age: 35, isBool: true, update_on: new Date() },
