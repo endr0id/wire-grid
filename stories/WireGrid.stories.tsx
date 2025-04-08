@@ -7,9 +7,9 @@ const meta: Meta<typeof WireGrid> = {
     tags: ["autodocs"],
     args: {
         data: [
-            { id: 1, name: "Alice", age: 25 },
-            { id: 2, name: "Alice", age: 30 },
-            { id: 3, name: "Alice", age: 35 },
+            { id: 1, name: "Alice", age: 25, isBool: true },
+            { id: 2, name: "Alice", age: 30, isBool: false },
+            { id: 3, name: "Alice", age: 35, isBool: true },
         ],
     },
 };

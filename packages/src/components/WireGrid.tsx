@@ -1,6 +1,8 @@
 import React from "react";
 import { Color } from "../constants/constant";
 import Divider from "./Divider";
+import { renderCellValue } from "../services/Cell";
+
 import type { WireGridProps } from "../shared/interface";
 
 const borderProperty = `1px solid ${Color.border}`;
@@ -49,7 +51,7 @@ export const WireGrid: React.FC<WireGridProps> = ({ data }) => {
                                         : borderProperty,
                             }}
                         >
-                            {property[name]}
+                            {renderCellValue(property[name])}
                         </div>
                     ))}
                 </React.Fragment>
