@@ -1,3 +1,7 @@
 export type DefaultColumnModel<R> = {
-  field: keyof R;
+  /**
+   * Exclude symbol type
+   */
+  field: keyof R & string;
+  headerName?: string;
 };
