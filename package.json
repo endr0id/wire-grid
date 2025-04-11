@@ -1,28 +1,44 @@
 {
-    "name": "wire-grid",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "lint": "eslint './src/**/*.{js,jsx,ts,tsx}' --fix",
-        "format": "prettier --write './src/**/*.{js,jsx,ts,tsx,json,css,md}'"
-    },
-    "keywords": [],
-    "author": "wataru endo",
-    "license": "MIT",
-    "peerDependencies": {
-        "react": "^19.1.0",
-        "react-dom": "^19.1.0"
-    },
-    "devDependencies": {
-        "@types/react": "^19.1.0",
-        "@types/react-dom": "^19.1.2",
-        "@typescript-eslint/eslint-plugin": "^8.29.1",
-        "@typescript-eslint/parser": "^8.29.1",
-        "eslint": "^9.24.0",
-        "eslint-config-prettier": "^10.1.2",
-        "eslint-plugin-prettier": "^5.2.6",
-        "prettier": "^3.5.3",
-        "typescript": "^5.8.3"
-    }
+  "name": "wire-grid",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint './src/**/*.{js,jsx,ts,tsx}' --fix",
+    "format": "prettier --write './src/**/*.{js,jsx,ts,tsx,json,css,md}'",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "keywords": [],
+  "author": "wataru endo",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "^3.2.6",
+    "@storybook/addon-essentials": "^8.6.12",
+    "@storybook/addon-onboarding": "^8.6.12",
+    "@storybook/blocks": "^8.6.12",
+    "@storybook/experimental-addon-test": "^8.6.12",
+    "@storybook/react": "^8.6.12",
+    "@storybook/react-vite": "^8.6.12",
+    "@storybook/test": "^8.6.12",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.2",
+    "@typescript-eslint/eslint-plugin": "^8.29.1",
+    "@typescript-eslint/parser": "^8.29.1",
+    "@vitest/browser": "^3.1.1",
+    "@vitest/coverage-v8": "^3.1.1",
+    "eslint": "^9.24.0",
+    "eslint-config-prettier": "^10.1.2",
+    "eslint-plugin-prettier": "^5.2.6",
+    "eslint-plugin-storybook": "^0.12.0",
+    "playwright": "^1.51.1",
+    "prettier": "^3.5.3",
+    "storybook": "^8.6.12",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.1"
+  }
 }

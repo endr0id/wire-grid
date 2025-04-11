@@ -7,7 +7,8 @@
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "prettier"
+    "prettier",
+    "plugin:storybook/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -15,7 +16,10 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
-  "plugins": ["@typescript-eslint", "prettier"],
+  "plugins": [
+    "@typescript-eslint",
+    "prettier"
+  ],
   "rules": {
     "prettier/prettier": "error",
     "@typescript-eslint/no-explicit-any": "off"
