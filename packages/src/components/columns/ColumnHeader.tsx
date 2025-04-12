@@ -1,5 +1,6 @@
 import { DefaultColumnModel } from '../../models/columns';
 import { DefaultRowModel } from '../../models/rows';
+import { getColumnHeader } from '../../utils/grid';
 
 const borderColor: string = '#e0e0e0';
 const border: string = `1px solid ${borderColor}`;
@@ -29,7 +30,7 @@ export const ColumnHeader = <R extends DefaultRowModel>({
     <>
       {colDefs.map((column, colIndex) => (
         <div key={colIndex} style={columnHeader}>
-          {column.headerName ?? column.field}
+          {getColumnHeader(column.field, column.headerName)}
           {colIndex === colDefs.length - 1 && <div style={{ ...divider }} />}
         </div>
       ))}

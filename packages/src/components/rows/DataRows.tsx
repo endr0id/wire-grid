@@ -1,6 +1,7 @@
 import React from 'react';
 import { DefaultColumnModel } from '../../models/columns';
 import { DefaultRowModel, GridRowModel } from '../../models/rows';
+import { getCellValue } from '../../utils/grid';
 
 const borderColor: string = '#e0e0e0';
 const border: string = `1px solid ${borderColor}`;
@@ -26,7 +27,7 @@ export const DataRows = <R extends DefaultRowModel>({
                 borderBottom: rowIndex === rowData.length - 1 ? 'none' : border,
               }}
             >
-              {row[column.field] ?? '-'}
+              {getCellValue(row, column.field)}
             </div>
           ))}
         </React.Fragment>
