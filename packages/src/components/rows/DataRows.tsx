@@ -2,9 +2,7 @@ import React from 'react';
 import { DefaultColumnModel } from '../../models/columns';
 import { DefaultRowModel, GridRowModel } from '../../models/rows';
 import { getCellValue } from '../../utils/grid';
-
-const borderColor: string = '#e0e0e0';
-const border: string = `1px solid ${borderColor}`;
+import { border } from '../../styles/WireGrid.styles';
 
 type Props<R extends DefaultRowModel> = {
   rowData: readonly GridRowModel<R>[];
