@@ -1,4 +1,4 @@
-export function getColumnHeader<R>(
+export function getHeaderLabel(
   field: string | number | symbol,
   headerName?: string,
 ): string {

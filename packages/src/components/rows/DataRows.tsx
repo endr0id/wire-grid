@@ -1,7 +1,7 @@
 import React from 'react';
 import { DefaultColumnModel } from '../../models/columns';
 import { DefaultRowModel, GridRowModel } from '../../models/rows';
-import { getCellValue } from '../../utils/grid';
+import { getCellValue } from '../../utils/display-utils';
 import { border } from '../../styles/WireGrid.styles';
 
 type Props<R extends DefaultRowModel> = {
