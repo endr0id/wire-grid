@@ -1,7 +1,7 @@
 import { DefaultColumnModel } from '../../models/columns';
 import { DefaultRowModel } from '../../models/rows';
 import { columnHeader, divider } from '../../styles/WireGrid.styles';
-import { getHeaderLabel } from '../../utils/display-utils';
+import { getHeaderLabel, getTextAlign } from '../../utils/display-utils';
 
 type Props<R extends DefaultRowModel> = {
   colDefs: readonly DefaultColumnModel<R>[];
@@ -13,9 +13,12 @@ export const ColumnHeader = <R extends DefaultRowModel>({
   return (
     <>
       {colDefs.map((column, colIndex) => (
-        <div key={colIndex} style={columnHeader}>
+        <div
+          key={colIndex}
+          style={{ ...columnHeader, textAlign: getTextAlign(column.position) }}
+        >
           {getHeaderLabel(column.field, column.headerName)}
-          {colIndex === colDefs.length - 1 && <div style={{ ...divider }} />}
+          {colIndex !== colDefs.length - 1 && <div style={{ ...divider }} />}
         </div>
       ))}
     </>

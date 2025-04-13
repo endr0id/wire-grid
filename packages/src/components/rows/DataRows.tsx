@@ -1,7 +1,7 @@
 import React from 'react';
 import { DefaultColumnModel } from '../../models/columns';
 import { DefaultRowModel, GridRowModel } from '../../models/rows';
-import { getCellValue } from '../../utils/display-utils';
+import { getCellValue, getTextAlign } from '../../utils/display-utils';
 import { border } from '../../styles/WireGrid.styles';
 
 type Props<R extends DefaultRowModel> = {
@@ -23,6 +23,7 @@ export const DataRows = <R extends DefaultRowModel>({
               style={{
                 padding: '8px',
                 borderBottom: rowIndex === rowData.length - 1 ? 'none' : border,
+                textAlign: getTextAlign(column.position),
               }}
             >
               {getCellValue(row, column.field)}
