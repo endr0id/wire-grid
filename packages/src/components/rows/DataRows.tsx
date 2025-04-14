@@ -1,15 +1,18 @@
 import React from 'react';
-import { DefaultColumnModel } from '../../models/columns';
-import { DefaultRowModel, GridRowModel } from '../../models/rows';
-import { getCellValue, getTextAlign } from '../../utils/display-utils';
+import { GridColDefs } from '../../models/columns';
+import { BaseRowModel, GridRowModel } from '../../models/rows';
+import {
+  getCellValue,
+  getTextAlign,
+} from '../../services/features/columns/columnDisplay';
 import { border } from '../../styles/WireGrid.styles';
 
-type Props<R extends DefaultRowModel> = {
+type Props<R extends BaseRowModel> = {
   rowData: readonly GridRowModel<R>[];
-  colDefs: readonly DefaultColumnModel<R>[];
+  colDefs: readonly GridColDefs<R>[];
 };
 
-export const DataRows = <R extends DefaultRowModel>({
+export const DataRows = <R extends BaseRowModel>({
   rowData,
   colDefs,
 }: Props<R>) => {

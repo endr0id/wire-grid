@@ -1,1 +1,1 @@
-export * from './baseColumnModel';
+export * from './gridColDefs';

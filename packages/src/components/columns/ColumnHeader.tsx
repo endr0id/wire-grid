@@ -1,10 +1,13 @@
-import { DefaultColumnModel } from '../../models/columns';
+import { GridColDefs } from '../../models/columns';
 import { BaseRowModel } from '../../models/rows';
 import { columnHeader, divider } from '../../styles/WireGrid.styles';
-import { getHeaderLabel, getTextAlign } from '../../utils/display-utils';
+import {
+  getHeaderLabel,
+  getTextAlign,
+} from '../../services/features/columns/columnDisplay';
 
 type Props<R extends BaseRowModel> = {
-  colDefs: readonly DefaultColumnModel<R>[];
+  colDefs: readonly GridColDefs<R>[];
 };
 
 export const ColumnHeader = <R extends BaseRowModel>({ colDefs }: Props<R>) => {
