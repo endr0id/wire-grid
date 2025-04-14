@@ -1,1 +1,1 @@
-export * from './baseRowModel';
+export * from './gridRowModel';
