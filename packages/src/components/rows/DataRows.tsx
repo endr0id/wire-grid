@@ -23,7 +23,7 @@ export const DataRows = <R extends DefaultRowModel>({
               style={{
                 padding: '8px',
                 borderBottom: rowIndex === rowData.length - 1 ? 'none' : border,
-                textAlign: getTextAlign(column.position),
+                textAlign: getTextAlign(column.align),
               }}
             >
               {getCellValue(row, column.field)}

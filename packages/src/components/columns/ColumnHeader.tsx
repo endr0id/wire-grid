@@ -15,7 +15,7 @@ export const ColumnHeader = <R extends DefaultRowModel>({
       {colDefs.map((column, colIndex) => (
         <div
           key={colIndex}
-          style={{ ...columnHeader, textAlign: getTextAlign(column.position) }}
+          style={{ ...columnHeader, textAlign: getTextAlign(column.align) }}
         >
           {getHeaderLabel(column.field, column.headerName)}
           {colIndex !== colDefs.length - 1 && <div style={{ ...divider }} />}

@@ -36,7 +36,7 @@ export const Default: Story = {
       },
     ],
     colDefs: [
-      { field: 'name' },
+      { field: 'name', align: 'center' },
       { field: 'age' },
       { field: 'email' },
       { field: 'employee' },

@@ -13,5 +13,5 @@ export type DefaultColumnModel<R> = {
    *
    * If you do not specify a position, left will be set as the default
    */
-  readonly position?: ColumnPositionValue;
+  readonly align?: ColumnPositionValue;
 };
