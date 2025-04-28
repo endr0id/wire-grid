@@ -1,16 +1,16 @@
 {
-  "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
-    "declaration": true,
-    "declarationMap": true,
-    "emitDeclarationOnly": false,
-    "outDir": "dist",
-    "strict": true,
-    "jsx": "react-jsx",
-    "esModuleInterop": true,
-    "moduleResolution": "node",
-  },
-  "include": ["src"],
-  "exclude": ["node_modules", "dist", "stories", ".storybook"]
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "ESNext",
+        "declaration": true,
+        "declarationMap": true,
+        "emitDeclarationOnly": false,
+        "outDir": "dist",
+        "strict": true,
+        "jsx": "react-jsx",
+        "esModuleInterop": true,
+        "moduleResolution": "node"
+    },
+    "include": ["packages"],
+    "exclude": ["node_modules", "dist", "stories", ".storybook"]
 }
